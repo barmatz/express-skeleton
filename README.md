@@ -1,4 +1,4 @@
 express-skeleton
 ================
 
-NodeJS Express server skeleton project
+> NodeJS Express server skeleton project
