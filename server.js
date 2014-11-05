@@ -2,6 +2,7 @@
 
 var express = require('express'),
     morgan = require('morgan'),
+    favicon = require('serve-favicon'),
     chalk = require('chalk'),
     path = require('path'),
     app,
@@ -12,6 +13,9 @@ app = express();
 
 // Use the Morgan logger in development mode. See https://www.npmjs.org/package/morgan
 app.use(morgan('dev'));
+
+// A middleware that will serve a favicon on any page
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 // Middleware that will load static files from the public directory
 app.use('/', express.static(path.join(__dirname, 'public')));
